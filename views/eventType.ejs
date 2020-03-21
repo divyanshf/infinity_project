@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+
+<div class="back" style="position:absolute;width:100%;bottom:-20%;">
+  <img src="/SVG/back.svg" alt="">
+</div>
+
+<h1 class="eventTitle" data-aos="fade-down"><%= title %></h1>
+
+<img class="eventImage" src="/SVG/<%= image %>.svg" alt="" data-aos="fade-up">
+
+<p class="content" data-aos="rotate-c"><%= content %></p>
+
+
+<form class="" action="/<%= btn_submit %>" method="post">
+  <button class="explore" style="left:5%" type="submit" name="button" data-aos="fade-right"><%= btn_type %></button>
+</form>
+
+<script>
+  let title = $(".eventTitle").text();
+  if(title==="QUIZ UP"){
+    $(".eventImage").css("top","20%");
+  }
+</script>
+<%- include("partials/footer") -%>

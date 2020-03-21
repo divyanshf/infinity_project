@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.13 202.64">
+      .cls-1 {
+        fill: #6b6b6b;
+      }
+      .cls-1,
+      .cls-2,
+      .cls-4 {
+        stroke: #424141;
+        stroke-miterlimit: 10;
+      }
+      .cls-2 {
+        fill: none;
+      }
+      .cls-3,
+      .cls-4 {
+        fill: #424141;
+      }
+      <rect fill="#6b6b6b" stroke="#424141" stroke-miterlimit="10"  x="31.46" y="84.3" width="62.88" height="117.84"/>
+      <circle fill="#424141" stroke="#424141" stroke-miterlimit="10" cx="62.86" cy="36.36" r="35.86"/>
+      <circle fill="none" stroke="#424141" stroke-miterlimit="10" cx="62.86" cy="36.36" r="28.56"/>
+      <circle fill="#424141" cx="63.86" cy="36.36" r="19.18"/>
+      <path fill="#424141" stroke="#424141" stroke-miterlimit="10" d="M.5,75.66v58.16s0,8.8,14.4,16H44.68V139s-9.62,4.32-13.94-9.36l.72-45.36s-5-10.08-13-8.64Z"/>
+      <path fill="#424141" stroke="#424141" stroke-miterlimit="10" d="M31.46,75.52h34.4s11.68-2.74,11,11.66l0,46.64s3.57,9.52,10.77,5.92v10.08H63.86S43,147.66,48,121.74V87.9s2.16-3.6-7.2-3.6H31.46Z"/>
+      <path fill="#424141" stroke="#424141" stroke-miterlimit="10" d="M126.5,149.82V84.3s2.88-7.9-18-9-30.24.21-30.24.21v7.82H90.5s4.08.48,3.84,5.76l.24,60.72Z"/>
+</svg>

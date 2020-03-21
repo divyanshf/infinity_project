@@ -1,0 +1,19 @@
+{
+  "name": "infinity",
+  "version": "1.0.0",
+  "description": "A website for techfest",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DivyanshFalodiya",
+  "license": "ISC",
+  "dependencies": {
+    "@mysql/xdevapi": "^8.0.19",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "request": "^2.88.2"
+  }
+}

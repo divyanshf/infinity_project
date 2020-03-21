@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+  <div class="page-head">
+    <svg id="event-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.4 71.5">
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M35.9,37.9H9.7V62.2H38.9v7.3H1V2.1H37.4V9.4H9.7V30.7H35.9Z"/>
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M70.9,69.5,48.9,2.1h9.4L68.8,35.3c2.9,9.1,5.4,17.3,7.2,25.2h.2c1.9-7.8,4.7-16.3,7.7-25.1L95.3,2.1h9.3L80.5,69.5Z"/>
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M151.8,37.9H125.6V62.2h29.2v7.3H116.9V2.1h36.4V9.4H125.6V30.7h26.2Z"/>
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M171.1,69.5V2.1h9.5l21.6,34.1a190.79,190.79,0,0,1,12.1,21.9l.2-.1c-.8-9-1-17.2-1-27.7V2.1h8.2V69.5h-8.8L191.5,35.3a213.93,213.93,0,0,1-12.6-22.5l-.3.1c.5,8.5.7,16.6.7,27.8V69.5Z"/>
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M254.7,9.5H234.19V2.1H284.1V9.5H263.5v60h-8.8Z"/>
+          <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M294.79,58.9a30.84,30.84,0,0,0,15.61,4.4c8.9,0,14.1-4.7,14.1-11.5,0-6.3-3.6-9.9-12.71-13.4-11-3.9-17.8-9.6-17.8-19.1C294,8.8,302.69,1,315.8,1c6.9,0,11.9,1.6,14.9,3.3l-2.4,7.1a26.84,26.84,0,0,0-12.8-3.2c-9.21,0-12.71,5.5-12.71,10.1,0,6.3,4.1,9.4,13.41,13,11.4,4.4,17.2,9.9,17.2,19.8,0,10.4-7.7,19.4-23.61,19.4-6.5,0-13.6-1.9-17.2-4.3Z"/>
+    </svg>
+  </div>
+  <div class="back" style="position:absolute;width:100%;bottom:-20%;">
+    <img src="/SVG/back.svg" alt="">
+  </div>
+
+  <div class="slide-container">
+    <div class="game" data-aos="slide-up" >
+      <a href="/events/gamer-zone"><img class="" src="/SVG/gampead.svg" alt="" style="width:100%"></a>
+      <h2>Gamer-Zone</h2>
+    </div>
+    <div class="code">
+      <a href="/events/compete-code"><img class="" src="/SVG/coding.svg" alt="" style="width:80%"></a>
+      <h2>CompeteCode</h2>
+    </div>
+    <div class="quiz">
+      <a href="/events/quiz-up"><img class="" src="/SVG/quiz.svg" alt="" style="width:100%; margin-top:10%;"></a>
+      <h2>QuizUp</h2>
+    </div>
+    <div class="dance">
+      <a href="/events/pronite"><img class="" src="/SVG/dance.svg" alt="" style="width:100%"></a>
+      <h2>Pronite</h2>
+    </div>
+  </div>
+  <button data-aos="fade-right" id="prev" type="button" name="button"><i class="fas fa-arrow-circle-left fa-4x"></i></button>
+  <button data-aos="fade-left" id="next" type="button" name="button"><i class="fas fa-arrow-circle-right fa-4x"></i></button>
+
+  <script src="event.js" charset="utf-8"></script>
+<%- include("partials/footer") -%>
