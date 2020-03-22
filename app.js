@@ -98,6 +98,7 @@ app.route("/events/:eventTitle")
   .get(function(req, res) {
     update();
     events.forEach(e => {
+      console.log(e.btn_type);
       if (e.title == req.params.eventTitle) {
 
         res.render("eventType", {
@@ -118,7 +119,8 @@ app.route("/events/:eventTitle")
         if (events[i].btn_type == "Login") {
           console.log("Login first!");
           res.redirect("/register");
-        } else if (events[i].btn_type == "Register") {
+        }
+        else if (events[i].btn_type == "Register") {
           let q = "INSERT INTO registration(user_id, event_id) VALUES ?";
           let values = [
             [userId, events[i].id]
@@ -128,10 +130,12 @@ app.route("/events/:eventTitle")
               console.log(err);
             else {
               console.log("Updated!");
-              res.redirect("/events/" + _.kebabCase(req.params.eventTitle));
+              update();
+              res.redirect("/events");
             }
           });
-        } else if (events[i].btn_type == "Withdraw") {
+        }
+         else if (events[i].btn_type == "Withdraw") {
           events[i].btn_type = "Register";
           let q = "DELETE FROM registration where event_id=" + sql.escape(events[i].id);
           mysql.query(q, function(err, result) {
@@ -139,11 +143,11 @@ app.route("/events/:eventTitle")
               console.log(err);
             else {
               console.log("Withdrawn!");
-              res.redirect("/events/" + _.kebabCase(req.params.eventTitle));
+              update();
+              res.redirect("/events");
             }
           });
         }
-        break;
       }
     }
   });

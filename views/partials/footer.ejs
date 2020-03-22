@@ -46,20 +46,25 @@
       }
     });
 
-    const cursor = $(".cursor");
-    $(document).mousemove(function(e) {
-      cursor.attr("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
-    });
-
-    $(document).click(function() {
-      cursor.addClass("curse-click");
-      setTimeout(() => {
-        cursor.removeClass("curse-click");
-      }, 500);
-    });
-
     $(window).on("load", function() {
       $(".loader").fadeOut("slow");
+    });
+
+    const moto = $("#moto")[0];
+    window.addEventListener("scroll",()=>{
+      const scrollValue = window.pageYOffset;
+      const rateY = scrollValue*0.55;
+      const rateX = scrollValue*0.8;
+      moto.style.transition = "0s";
+      moto.style.transform = "translate3d("+(-rateX)+"px, "+rateY+"px, 0px)";
+      if(scrollValue == 100){
+        if(moto.innerText=="REDEFINING"){
+          moto.innerText = "REDEFINED";
+        }
+        else {
+          moto.innerText = "REDEFINING";
+        }
+      }
     });
   </script>
 

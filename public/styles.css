@@ -22,6 +22,12 @@ body {
   position: absolute;
   z-index: -1;
 }
+#cursor{
+  background: transparent;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+}
 
 .loader {
   width: 100%;
@@ -90,12 +96,15 @@ body {
   transition: 0.5s ease;
   transform: scale(1.2);
 }
-.ham #ham1{
+
+.ham #ham1 {
   display: block;
 }
-.ham #ham2{
+
+.ham #ham2 {
   display: none;
 }
+
 .ham #ham1 #handle {
   transform-origin: 100% 0;
   transform-box: fill-box;
@@ -782,6 +791,11 @@ body {
   color: grey;
 }
 
+.eventType-button {
+  left: 5%;
+  bottom: 20%;
+}
+
 .eventImage {
   position: absolute;
   top: 10%;
@@ -853,7 +867,7 @@ body {
 .user-details {
   position: absolute;
   width: 40%;
-  bottom: 50%;
+  bottom: 45%;
   left: 30%;
   display: flex;
   flex-direction: column;
@@ -1072,12 +1086,15 @@ body {
   .user-events-head {
     color: black;
   }
-  .ham #ham1{
+
+  .ham #ham1 {
     display: none;
   }
-  .ham #ham2{
+
+  .ham #ham2 {
     display: block;
   }
+
   .ham #ham2 .line {
     background-color: black;
     position: relative;
@@ -1085,11 +1102,12 @@ body {
     height: 3px;
     margin-top: 10px;
     top: 0px;
-    right:10px;
+    right: 10px;
     margin-left: 20px;
     border-radius: 30%;
     transition: 0.4s ease-in;
   }
+
   .ham #ham2 .two {
     transition: 0.4s ease;
     margin-left: 28px;
@@ -1100,7 +1118,7 @@ body {
     cursor: pointer;
   }
 
-  .ham:hover #ham2  .mid {
+  .ham:hover #ham2 .mid {
     transition: 0.4s ease-out;
     opacity: 0;
   }
@@ -1139,6 +1157,22 @@ body {
   .ham #ham2 .two-final {
     transition: 0.4s ease-out;
     opacity: 0;
+  }
+
+  .nav-container .string{
+    display: none;
+  }
+
+
+  .eventType-button {
+    left: 45%;
+  }
+  .slide-down {
+    top: 10%;
+  }
+
+  .slide-up {
+    top: -110%;
   }
 }
 

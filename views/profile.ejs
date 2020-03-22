@@ -42,6 +42,9 @@
   </div>
   <div class="user-events-list">
     <ul>
+      <% if(userEvents.length === 0){ %>
+        <li style="text-align:center;">Not registered for any event!</li>
+      <% } %>
       <% userEvents.forEach((e)=>{ %>
           <li><%= e %></li>
       <% }) %>
