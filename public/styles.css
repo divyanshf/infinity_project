@@ -47,8 +47,9 @@ body {
 }
 
 .back {
-  width: 1920px;
+  width: 100%;
 }
+
 
 .nav-brand {
   position: fixed;
@@ -159,8 +160,6 @@ body {
   transition: 0.2s ease;
   opacity: 0;
 }
-
-
 .nav .nav-content ul a li:hover:after{
   left:49%;
   transition: 0.5s ease;
@@ -172,8 +171,8 @@ body {
   width: 50%;
   top: 50%;
   left: 50%;
+  fill:none;
   transform: translate(-50%, -50%);
-  fill: none;
   animation: head-fill 1.5s linear 2.5s forwards;
   transition: 1s ease;
 }
@@ -228,14 +227,13 @@ body {
 
 .explore {
   position: absolute;
-  /* top: 80%; */
   bottom: 20%;
   left: 45%;
   transform: translateX(-50%);
   color: white;
   font-size: 0.8em;
   width: 12%;
-  height: 8%;
+  height: 50px;
   background: #1a1a1a;
   border-radius: 10px;
   letter-spacing: 5px;
@@ -257,6 +255,17 @@ body {
   letter-spacing: 5px;
   top: 35%;
   left: 25%;
+}
+#moto-mobile{
+  position: absolute;
+  color:grey;
+  opacity: 100%;
+  font-size: 0.8em;
+  top: 50%;
+  right:10%;
+  letter-spacing: 5px;
+  margin-bottom:20px;
+  visibility: hidden;
 }
 
 #fb {
@@ -361,7 +370,6 @@ body {
 .slide-container {
   position:absolute;
   z-index:1;
-  /* max-width: 1300px; */
   left:50%;
   top: 10%;
   transform: translate(-50%);
@@ -394,6 +402,7 @@ body {
 #next{
   right:10%;
 }
+
 #register-title path:nth-child(1){
   stroke-dasharray:358.2;
   stroke-dashoffset:358.2;
@@ -748,7 +757,6 @@ body {
   top:50%;
 }
 
-
 /* Profile Page */
 #profile path:nth-child(1) {
   stroke-dasharray: 538.8;
@@ -801,7 +809,6 @@ body {
   stroke-dashoffset: 318.4;
   animation: head-anime 1s linear 1.6s forwards;
 }
-
 .user-details{
   position: absolute;
   width:40%;
@@ -829,7 +836,7 @@ body {
 .user-events{
   position: absolute;
   left:43%;
-  top:65%;
+  bottom: 130px;
 }
 .user-events-head {
  color: white;
@@ -848,13 +855,148 @@ body {
 
 .user-events-list ul li{
   color: grey;
-  margin:1%;
+  margin:1.5%;
 }
 
 .user-details-login button{
-  bottom:30%;
+  bottom:100px;
   left:50%;
 }
+
+@media screen and (max-width:700px){
+  #canvas{
+    /* visibility: hidden; */
+    position: fixed;
+  }
+  .back{
+    display: none;
+  }
+  .nav-brand{
+    width:20%;
+  }
+  .ham{
+    width:10%;
+  }
+  .nav .nav-content ul a {
+    font-size:1.5rem;
+  }
+  .nav .nav-content ul li::after{
+    display: none;
+  }
+  #logo{
+    animation: head-fill-logo 1.5s linear 2.5s forwards;
+    width:80%;
+    top: 40%;
+    left:60%
+  }
+  #logo path{
+    stroke:black;
+  }
+  #moto{
+    color:grey;
+    opacity: 100%;
+    font-size: 0.8em;
+    top: 30%;
+    left:10%;
+    margin-bottom:20px;
+  }
+  #moto-mobile{
+    visibility: visible;
+  }
+  .foots{
+    font-size: 0.5rem;
+  }
+  .explore{
+    width:100px;
+    height:40px;
+    font-size:0.7rem;
+    left:40%;
+  }
+  .copyright p{
+    font-size:0.5rem;
+  }
+  .page-head{
+    top:5%;
+    width:25%;
+  }
+  .slide-container{
+    flex-direction: column;
+    top: 20%;
+  }
+  .slide-container div{
+    display: block;
+    width:120%;
+  }
+  .slide-container h2{
+    position: absolute;
+    bottom: 0;
+    left:45%;
+  }
+  .form-container{
+    width:100%;
+    height:100%;
+    left:0;
+    border:none;
+    border-radius: 0;
+  }
+  #log-in-head{
+    color: white;
+    text-shadow: 3px 3px 3px black, -1px -1px 3px black;
+  }
+  .form-container form {
+    margin-top:10%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-container form div{
+    width: 80%;
+    margin-top:8%;
+  }
+  .iiitm{
+    left:45%;
+    top: 20%;
+    width:15%;
+  }
+  .iiitm-heading{
+    left:0;
+  }
+  .iiitm-heading h2{
+    font-size:1.2rem;
+    text-align: center;
+  }
+  .detail-info{
+    left:15%;
+  }
+  .detail-info p{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .address{
+    text-align: center;
+    left:50%;
+    transform: translate(-50%);
+    color: blue;
+    font-size:0.5em;
+  }
+  .eventTitle {
+    top: 5%;
+    left: 40%;
+    width: auto;
+    font-size: 1.5rem;
+  }
+  .eventImage{
+    top:10%;
+    left:30%;
+  }
+  .user-events{
+    left:32%;
+  }
+  .user-events-head {
+   color:black;
+  }
+}
+
 
 @keyframes out-curse {
   from{
@@ -883,6 +1025,15 @@ body {
 
   to {
     fill: white;
+  }
+}
+@keyframes head-fill-logo {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: black;
   }
 }
 
