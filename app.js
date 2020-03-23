@@ -119,8 +119,7 @@ app.route("/events/:eventTitle")
         if (events[i].btn_type == "Login") {
           console.log("Login first!");
           res.redirect("/register");
-        }
-        else if (events[i].btn_type == "Register") {
+        } else if (events[i].btn_type == "Register") {
           let q = "INSERT INTO registration(user_id, event_id) VALUES ?";
           let values = [
             [userId, events[i].id]
@@ -134,8 +133,7 @@ app.route("/events/:eventTitle")
               res.redirect("/events");
             }
           });
-        }
-         else if (events[i].btn_type == "Withdraw") {
+        } else if (events[i].btn_type == "Withdraw") {
           events[i].btn_type = "Register";
           let q = "DELETE FROM registration where event_id=" + sql.escape(events[i].id);
           mysql.query(q, function(err, result) {
@@ -195,24 +193,38 @@ app.post("/register", function(req, res) {
   let nameRegister = req.body.nameRegister;
   let passRegister = req.body.passRegister;
 
-  bcrypt.hash(passRegister, saltRounds, function(err, hash) {
-    if (!err) {
-      let q = "INSERT INTO users(name, email, pass) VALUES?";
-      const values = [
-        [nameRegister, emailRegister, hash]
-      ];
-      mysql.query(q, [values], function(err) {
-        if (err)
-          console.log(err);
-        else {
-          console.log("Registered!");
-          res.redirect("/register");
-        }
-      });
+  var checkQuery = "SELECT * FROM users WHERE email = " + sql.escape(emailRegister);
+  mysql.query(checkQuery, function(err, foundUser) {
+    if (err) {
+      console.log(err);
     } else {
-      log(err);
+      if (foundUser) {
+        console.log("Already Present");
+        res.render("register", {type:"Email address already registered!"});
+      } else {
+
+        bcrypt.hash(passRegister, saltRounds, function(err, hash) {
+          if (!err) {
+            let q = "INSERT INTO users(name, email, pass) VALUES?";
+            const values = [
+              [nameRegister, emailRegister, hash]
+            ];
+            mysql.query(q, [values], function(err) {
+              if (err)
+                console.log(err);
+              else {
+                console.log("Registered!");
+                res.redirect("/register");
+              }
+            });
+          } else {
+            log(err);
+          }
+        });
+      }
     }
   });
+
 
 });
 
@@ -222,16 +234,17 @@ app.post("/register", function(req, res) {
 function update() {
   if (userName != "") {
     userEvents = [];
+    userEventsKebab = [];
     let q = "SELECT event_id FROM registration WHERE user_id =" + sql.escape(userId);
     mysql.query(q, function(err, userRegister) {
       if (!err) {
         console.log(userRegister);
         if (userRegister) {
-          events.forEach(e=>{
-            e.btn_type="Register";
+          events.forEach(e => {
+            e.btn_type = "Register";
           });
           userRegister.forEach(u => {
-            let index =u.event_id - 1;
+            let index = u.event_id - 1;
             events[index].btn_type = "Withdraw";
             userEvents.push(_.upperCase(events[index].title));
           });

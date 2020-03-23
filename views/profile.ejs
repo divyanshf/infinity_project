@@ -44,6 +44,7 @@
     <ul>
       <% if(userEvents.length === 0){ %>
         <li style="text-align:center;">Not registered for any event!</li>
+        <li><a href="/events"><button class="explore not-registered-btn" type="button" >Explore</button></a></li>
       <% } %>
       <% userEvents.forEach((e)=>{ %>
           <li><%= e %></li>
