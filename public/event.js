@@ -11,7 +11,7 @@ document.addEventListener("keydown", function(e){
   }
   else if(e.keyCode==37){
     i--;
-    if(i<1)
+    if(i==0)
     i=numberOfSlides;
     show(i);
   }
@@ -24,7 +24,7 @@ $("#next").click(function(){
 });
 $("#prev").click(function(){
   i--;
-  if(i<1)
+  if(i==0)
   i=numberOfSlides;
   show(i);
 });
@@ -33,5 +33,6 @@ function show(n){
   slides.each(function(e){
     slides[e].style.display = "none";
   });
-    slides[n-1].style.display = "block";
+  console.log(slides[n-1]);
+  slides[n-1].style.display = "block";
 }

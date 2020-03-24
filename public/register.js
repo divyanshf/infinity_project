@@ -50,3 +50,7 @@ function validatePrimaryRegsiter() {
       return (false);
   }
 };
+
+setTimeout(()=>{
+  $(".type-register").fadeOut();
+},5000);

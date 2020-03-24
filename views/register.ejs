@@ -23,13 +23,14 @@
     <h2 id="log-in-head">Log-in</h2>
     <form class="" onsubmit="return validatePrimaryLogin()" action="/login" method="post">
       <div class="username">
-        <input type="email" name="emailLogin" required>
+        <input type="email" name="email" required>
         <label for="name" class="label"><span class="label-name">Email Address</span></label>
       </div>
       <div class="password">
-        <input type="password" name="passLogin" required>
+        <input type="password" name="password" required>
         <label for="password" class="label"><span class="label-name">Password</span></label>
       </div>
+      <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a>
       <button class="primary-button" type="submit" name="login">Login</button>
 
       <h3>Not yet registered!</h3>
@@ -41,17 +42,18 @@
       <h2 id="log-in-head">Register</h2>
       <form class="" onsubmit="return validatePrimaryRegsiter()" action="/register" method="post">
         <div class="username">
-          <input type="text" name="nameRegister" required>
+          <input type="text" name="name" >
           <label for="name" class="label"><span class="label-name">Name</span></label>
         </div>
         <div class="email">
-          <input type="email" name="emailRegister" required>
+          <input type="email" name="email" required>
           <label for="name" class="label"><span class="label-name">E-mail</span></label>
         </div>
         <div class="password">
-          <input type="password" name="passRegister" required>
+          <input type="password" name="password" required>
           <label for="password" class="label"><span class="label-name">Password</span></label>
         </div>
+        <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a>
         <button class="primary-button" type="submit" name="register">Register</button>
 
         <h3>Already registered!</h3>
@@ -62,9 +64,6 @@
 </div>
 
 
-<div class="type-register">
-  <p><%= type %></p>
-</div>
 
 <script src="register.js" charset="utf-8"></script>
 <%- include("partials/footer") -%>
