@@ -11,6 +11,7 @@ const session = require("cookie-session");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
+const keys = require("./config/keys");
 
 
 //Variables to store the login details
@@ -30,17 +31,10 @@ app.use(express.urlencoded({
 }));
 app.use(express.static("public"));
 
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: {
-//     secure: true
-//   }
-// }))
+
 app.use(session({
   maxAge: 24 * 60 * 60 * 1000,
-  keys: ["Mylitlesecret."]
+  keys: [keys.session.key]
 }));
 
 
