@@ -1,8 +1,9 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const LocalStrategy = require("passport-local").Strategy;
-const mysql = require("../database");
+const mysql = require("./database");
 const sql = require("mysql");
+const keys = require("./keys");
 
 passport.serializeUser(function(user, done) {
   console.log(user);
@@ -86,9 +87,9 @@ function(req, username, password, done){
 
 
 passport.use(new GoogleStrategy({
-    callbackURL: "http://localhost:3000/auth/google/redirect",
-    clientID: "292764421696-ip5ti7pnrvk1ik2r2880kdlp317h8dhh.apps.googleusercontent.com",
-    clientSecret: "UWFfG7tAybPi1RWB8CtAxJVo"
+    callbackURL: keys.google.callbackUrl,
+    clientID: keys.google.client_id,
+    clientSecret: keys.google.client_secret
   },
   (accessToken, refreshToken, profile, done) => {
     console.log(profile);

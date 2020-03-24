@@ -1,11 +1,12 @@
 // require("dotenv").config();
 const mysql = require("mysql");
+const keys = require("./keys");
 
 const con = mysql.createConnection({
-  host:"sql12.freemysqlhosting.net",
-  user:"sql12328797",
-  password:"KhzMGUBQ6W",
-  database:"sql12328797"
+  host:keys.sql.host,
+  user:keys.sql.user,
+  password:keys.sql.pass,
+  database:keys.sql.db
 });
 
 con.connect(function(err){
