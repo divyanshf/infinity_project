@@ -8,6 +8,9 @@
   },
   "author": "DivyanshFalodiya",
   "license": "ISC",
+  "engines":{
+    "node":"12.16.1"
+  },
   "dependencies": {
     "@mysql/xdevapi": "^8.0.19",
     "bcrypt": "^4.0.1",

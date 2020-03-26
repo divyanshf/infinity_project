@@ -214,6 +214,6 @@ app.post("/contact", (req, res)=>{
 
 
 //Listening on port
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server started at the specified port!");
 });
