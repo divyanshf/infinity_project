@@ -1,13 +1,13 @@
 const nodemailer = require("nodemailer");
 const mailGun = require("nodemailer-mailgun-transport");
-const keys = require("./keys");
+// const keys = require("./keys");
 
 
 //authorizing key details for mailGun
 const auth = {
   auth: {
-    api_key: keys.mail.api_key,
-    domain: keys.mail.domain
+    api_key: process.MAIL_API_KEY,
+    domain: process.MAIL_DOMAIN
   }
 };
 
@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport(mailGun(auth));
 const sendMail = (email, subject, text, cb) => {
   const mailOptions = {
     from: email,
-    to: keys.mail.recepient,
+    to: process.env.MAIL_RECEPIENT,
     subject: subject,
     text: text
   };

@@ -12,7 +12,7 @@ const sendMail = require("./config/mail");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
-const keys = require("./config/keys");
+// const keys = require("./config/keys");
 const flash = require("connect-flash");
 
 
@@ -28,7 +28,7 @@ app.use(express.urlencoded({
 app.use(express.static("public"));
 app.use(session({
   maxAge: 24 * 60 * 60 * 1000,
-  keys: [keys.session.key]
+  keys: [process.env.SESSION_KEY]
 }));
 
 

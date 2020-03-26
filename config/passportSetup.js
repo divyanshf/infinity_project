@@ -3,7 +3,7 @@ const GoogleStrategy = require("passport-google-oauth20");
 const LocalStrategy = require("passport-local").Strategy;
 const mysql = require("./database");
 const sql = require("mysql");
-const keys = require("./keys");
+// const keys = require("./keys");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -94,9 +94,9 @@ passport.use("local-login", new LocalStrategy({
 
 //Using the Google Strategy using passport to register or login a user with google
 passport.use(new GoogleStrategy({
-    callbackURL: keys.google.callbackUrl,
-    clientID: keys.google.client_id,
-    clientSecret: keys.google.client_secret
+    callbackURL: process.env.GOOGLE_CALLBACK,
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET
   },
   (accessToken, refreshToken, profile, done) => {
     var name = profile.displayName;
