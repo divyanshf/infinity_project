@@ -1,27 +1,23 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
 const _ = require("lodash");
 const sql = require("mysql");
 const mysql = require("./config/database");
 const passport = require("passport");
 const passportSetup = require("./config/passportSetup");
 const session = require("cookie-session");
-// const session = require("express-session");
+const nodemailer = require("nodemailer");
+const mailGun = require("nodemailer-mailgun-transport");
+const sendMail = require("./config/mail");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 const keys = require("./config/keys");
+const flash = require("connect-flash");
 
 
-//Variables to store the login details
-var userEmail = "";
-var userName = "";
-var userId = "";
-var userEvents = [];
-var registerType = "";
-
-
+//Initializing app
+app.use(flash());
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
@@ -30,71 +26,47 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.static("public"));
-
-
 app.use(session({
   maxAge: 24 * 60 * 60 * 1000,
   keys: [keys.session.key]
 }));
 
 
-//passport init
+//passport initizaliztion
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 //Event object to recognize every event
 const events = [{
     title: "gamer-zone",
     content: "Information about Gamer-zone",
-    image: "gampead",
-    btn_type: "Login",
+    image: "gampad",
     id: 1
   },
   {
     title: "compete-code",
     content: "Information about CompeteCode",
     image: "coding",
-    btn_type: "Login",
     id: 2
   },
   {
     title: "quiz-up",
     content: "Information about Quiz-Up",
     image: "quiz",
-    btn_type: "Login",
     id: 3
   },
   {
     title: "pronite",
     content: "Information about Pronite",
     image: "dance",
-    btn_type: "Login",
     id: 4
   }
 ];
 
 
-//Getting a specific page
-
-app.get("/auth/google", passport.authenticate("google", {
-  scope: ["profile", "email"]
-}));
-
-
-app.get("/auth/google/redirect", passport.authenticate("google"), (req, res) => {
-  console.log("Callback URI");
-  console.log(req.user);
-  res.redirect("/profile");
-});
-
-
-app.get("/", function(req, res) {
-  res.render("home");
-});
-
-
+//function to check authoirzation
 const authCheck = (req, res, next) => {
-  console.log(req.user);
   if (req.isAuthenticated()) {
     next();
   } else {
@@ -102,15 +74,33 @@ const authCheck = (req, res, next) => {
   }
 }
 
+
+//Getting a specific page
+app.get("/auth/google", passport.authenticate("google", {
+  scope: ["profile", "email"]
+}));
+
+app.get("/auth/google/redirect", passport.authenticate("google"), (req, res) => {
+  res.redirect("/profile");
+});
+
+app.get("/", function(req, res) {
+  res.render("home");
+});
+
 app.get("/profile", authCheck, function(req, res) {
-  setTimeout(() => {
-    res.render("profile", {
-      userName: req.user.name,
-      userEmail: req.user.email,
-      userEvents: userEvents,
-      img: req.user.image
+    mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE users.email='" + req.user.email + "'", (err, rows)=>{
+      if(err)
+      console.log(err);
+      else {
+        res.render("profile", {
+          userName: req.user.name,
+          userEmail: req.user.email,
+          userEvents: rows,
+          img: req.user.image
+        });
+      }
     });
-  }, 1000);
 });
 
 app.get("/logout", (req, res) => {
@@ -124,7 +114,7 @@ app.get("/events", function(req, res) {
 
 app.get("/register", function(req, res) {
   res.render("register", {
-    type: registerType
+    message: req.flash("message")
   });
 });
 
@@ -133,13 +123,9 @@ app.get("/details", function(req, res) {
 });
 
 app.get("/contact", function(req, res) {
-  res.render("contact");
+  res.render("contact", {message:""});
 });
 
-
-
-
-//Routing a specific page with its get and post methods
 app.get("/events/:eventTitle", authCheck, function(req, res) {
   events.forEach(e=>{
     if(e.title === req.params.eventTitle){
@@ -159,6 +145,9 @@ app.get("/events/:eventTitle", authCheck, function(req, res) {
     }
   });
 });
+
+
+//post method for every event page to register or withdraw from them
 app.post("/events/:eventTitle", function(req, res) {
   events.forEach(e=>{
     if(e.title===req.params.eventTitle){
@@ -167,15 +156,12 @@ app.post("/events/:eventTitle", function(req, res) {
         if(err)
         console.log(err);
         else {
-          console.log("In the else");
             if(rows.length==0){
-              console.log("To be added");
               var value=[[req.user.id, e.id]];
               mysql.query("INSERT INTO registration(user_id, event_id) VALUES?",[value], function(err){
                 if(err)
                 console.log(err);
                 else {
-                  console.log("Event added successfully");
                   res.redirect("/events");
                 }
               });
@@ -185,14 +171,12 @@ app.post("/events/:eventTitle", function(req, res) {
                 if(err)
                 console.log(err);
                 else {
-                  console.log("Withdrawn from the event successfully!");
                   res.redirect("events");
                 }
               });
             }
         }
       });
-
     }
   });
 });
@@ -201,19 +185,35 @@ app.post("/events/:eventTitle", function(req, res) {
 //Logging in a user
 app.post("/login", passport.authenticate("local-login", {
   successRedirect: "/profile",
-  failureRedirect: "/register"
+  failureRedirect: "/register",
+  failureFlash:true
 }));
+
+
 //Regsitering a new user
 app.post("/register", passport.authenticate("local-register", {
   successRedirect: "/profile",
-  failureRedirect: "/register"
+  failureRedirect: "/register",
+  failureFlash:true
 }));
 
 
+//Sending a mail via the contact page
+app.post("/contact", (req, res)=>{
+  var name = "Infinity "+req.body.name;
+  var email = req.body.email;
+  var message = req.body.message;
+  sendMail(email, name, message, function(err, data){
+    if(err)
+    console.log(err);
+    else {
+      res.render("contact", {message:"We have received your message! Thanks for reaching out to us!"});
+    }
+  });
+});
 
 
-
-
+//Listening on port
 app.listen(3000, () => {
   console.log("Server started at the specified port!");
 });

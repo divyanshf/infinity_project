@@ -1,30 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.5 161.01">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #1a1a1a;
-        stroke-width: 3px;
-      }
-      .cls-1,
-      .cls-3 {
-        stroke: #000;
-        stroke-miterlimit: 10;
-      }
-      .cls-2 {
-        fill: #333;
-      }
-      .cls-3 {
-        fill: none;
-        stroke-width: 4px;
-      }
-    </style>
-  </defs>
-  <title>ham</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="Layer_1-2" data-name="Layer 1">
-      <g id="backham">
-        <g id="backham-2" data-name="backham"><circle class="cls-1" cx="64.25" cy="96.76" r="62.75"/><circle class="cls-2" cx="64.5" cy="97.01" r="28"/></g><line class="cls-3" x1="126" y1="110.51" x2="126.5" y2="0.01"/></g>
-      <g id="handle"><rect x="60" y="96.51" width="8" height="44"/><rect x="52.14" y="132.88" width="7.57" height="23.8" transform="translate(131.96 9.47) rotate(50.45)"/></g>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128.5 161" style="enable-background:new 0 0 128.5 161;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1A1A1A;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#333333;}
+	.st2{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+</style>
+<title>ham</title>
+<g>
+	<g>
+		<g id="Layer_1-2">
+			<g id="backham">
+				<g id="backham-2">
+					<circle class="st0" cx="59.6" cy="89.5" r="58.1"/>
+					<circle class="st1" cx="59.8" cy="89.8" r="25.9"/>
+				</g>
+				<line class="st2" x1="116.7" y1="102.3" x2="117.2" y2="0"/>
+			</g>
+		</g>
+	</g>
+	<polygon id="handle" points="59.6,129.4 61.4,125 68.8,122.8 78.1,152.9 76.2,157.2 68.9,159.5 	"/>
+</g>
 </svg>

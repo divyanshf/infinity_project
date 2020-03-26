@@ -21,7 +21,7 @@
 
   <div class="primary-log-in">
     <h2 id="log-in-head">Log-in</h2>
-    <form class="" onsubmit="return validatePrimaryLogin()" action="/login" method="post">
+    <form class="" onsubmit="return validatePrimaryLogin()" action="/login" method="post" autocomplete="off">
       <div class="username">
         <input type="email" name="email" required>
         <label for="name" class="label"><span class="label-name">Email Address</span></label>
@@ -40,7 +40,7 @@
 
     <div class="primary-register">
       <h2 id="log-in-head">Register</h2>
-      <form class="" onsubmit="return validatePrimaryRegsiter()" action="/register" method="post">
+      <form class="" onsubmit="return validatePrimaryRegsiter()" action="/register" method="post" autocomplete="off">
         <div class="username">
           <input type="text" name="name" >
           <label for="name" class="label"><span class="label-name">Name</span></label>
@@ -63,6 +63,9 @@
 
 </div>
 
+<div class="type-register">
+  <p><%= message %></p>
+</div>
 
 
 <script src="register.js" charset="utf-8"></script>
