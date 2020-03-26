@@ -1,0 +1,65 @@
+[33mcommit 2fa7286eaa8448c901d10f39c67b4f28dfb09958[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Thu Mar 26 16:59:43 2020 +0530
+
+    Added procfile and other heroku items
+
+[33mcommit 08bf1c37c8a6d3fc04596fc2ac53d6135287a714[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Thu Mar 26 16:46:04 2020 +0530
+
+    Finished up the contact page with mailing option
+
+[33mcommit 5089b86c4fcc37a2693f2ac630731e38f107f827[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Tue Mar 24 19:25:25 2020 +0530
+
+    Key valued
+
+[33mcommit 52bd0f586bf26bb6a69e47ace6b70ced57bd8f44[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Tue Mar 24 18:50:13 2020 +0530
+
+    Added local and google strategy authentication with passportjs
+
+[33mcommit b9aa4906ab3f68a1c39d6789825282fa677db6df[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Tue Mar 24 18:30:32 2020 +0530
+
+    Added passport js authentication and google sign-in option
+
+[33mcommit 47b3632395e55e0c0bc5e6c0494139d220d765fd[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Mon Mar 23 15:52:03 2020 +0530
+
+    A few more modifications
+
+[33mcommit bf48de46b46b26c9698e3dbd0651203b74a6a9bd[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Sun Mar 22 22:46:29 2020 +0530
+
+    Some more front-end
+
+[33mcommit 173c138e8d60bfc64daf40a1e484fbc74bf46cbc[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Sun Mar 22 09:46:27 2020 +0530
+
+    Added a ham when in mobile
+
+[33mcommit 60aebba47cbfbfad2ad3741f3eec891776d540b8[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Sun Mar 22 09:22:41 2020 +0530
+
+    Added a little bit responsiveness
+
+[33mcommit 8c5fddb4e3b7aa3e9a7b17b4526c52576ea62ce5[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Sun Mar 22 01:59:18 2020 +0530
+
+    Password Protection added
+
+[33mcommit 528a343fcf3ec4866063eae76279e75a1c8c6723[m
+Author: DivyanshFalodiya <divyanshfalodiyaab@gmail.com>
+Date:   Sat Mar 21 22:05:03 2020 +0530
+
+    Re-initialized everything
