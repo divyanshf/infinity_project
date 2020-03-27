@@ -2,7 +2,7 @@
 
 ## WHAT IS THE INFINITY-PROJECT?
 
-> A website for TechFest that helps a user register for events being held in the fest.
+-> A website for TechFest that helps a user register for events being held in the fest.
 This website has been developed under webKriti being held by AASF@ABV-IIITM.
 
 ## WHAT CAN YOU EXPECT?
@@ -13,7 +13,7 @@ This website has been developed under webKriti being held by AASF@ABV-IIITM.
 * A Login/Register page to log an existing user in or register a new user to the fest database with their passwords being utmost safe using hashing techniques. We have tried to implement the option to locally authenticate the user using the ***passport*** and ***passport-local*** package's local strategy. Also, we have tried to secure the user's crucial information (like passwords) by hashing the information using the ***bcrypt*** package.  
 * A Profile page to display the user details and the list of events that the user has registered for. This page also provides an option to log the user out of session. We have tried to implement this page using the ***mysql*** and ***passport*** packages.  
 * A Google-sign-in option to help the user log-in or register with their google account if they wish to. We have tried to implement this feature to authenticate the user via his/her google account using the ***passport*** and ***passport-google-oauth20*** package's google strategy.
-* A Contact page for the user to get in contact with us and send us a message. We have tried to implement this feature of receiving mails from users using the ***nodemailer*** package. This feature is also supported by ***mailGun's services.
+* A Contact page for the user to get in contact with us and send us a message. We have tried to implement this feature of receiving mails from users using the ***nodemailer*** package. This feature is also supported by ***mailGun's services***.
 
 ## SCREENSHOTS
 
