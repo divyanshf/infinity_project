@@ -171,7 +171,7 @@ app.post("/events/:eventTitle", function(req, res) {
                 if(err)
                 console.log(err);
                 else {
-                  res.redirect("events");
+                  res.redirect("/events");
                 }
               });
             }
