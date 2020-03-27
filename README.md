@@ -18,7 +18,7 @@ This website has been developed under webKriti being held by AASF@ABV-IIITM.
 
 ## SCREENSHOTS
 
-Attach a google drive link to a folder containing screenshots of your website. Make sure you have enabled link sharing to view the folder.
+The screenshots for every page can be seen [here](https://drive.google.com/drive/folders/1t8iVa4x3xPV8R6T2bukjwTYxDZ7eeKMu?usp=sharing)
 
 ## VIDEO
 
