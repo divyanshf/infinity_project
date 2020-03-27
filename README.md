@@ -22,7 +22,7 @@ The screenshots for every page can be seen [here](https://drive.google.com/drive
 
 ## VIDEO
 
-Attach a google drive link to a video of your website(max length : 5 mins). Make sure you have enabled link sharing to view the video.
+You can find the video [here](https://drive.google.com/file/d/1DJuu-mZyXLByei5fM4yZCtGT6VkTOuDQ/view?usp=sharing)
 
 ## HOSTED WEBSITE LINK
 
