@@ -2,13 +2,13 @@
 
 ## WHAT IS THE INFINITY-PROJECT?
 
-->A website for TechFest that helps a user register for events being held in the fest.
+> A website for TechFest that helps a user register for events being held in the fest.
 This website has been developed under webKriti being held by AASF@ABV-IIITM.
 
 ## WHAT CAN YOU EXPECT?
 
 * A fully fledged website developed by TeamInfinity to provide the user with a convenient source to register/withdraw from an event being held in the fest.  
-* A completely responsive layout which helps the user to be able to surf through the website and experience it anywhere and on any mobile/desktop device. 
+* A completely responsive layout which helps the user to be able to surf through the website and experience it on any mobile/desktop device. 
 * An Events page to help the user surf through the events being held in the fest and also register/withdraw for them as per their wish (using MySQL to add/remove data fromm the database).
 * A Login/Register page to log an existing user in or register a new user to the fest database with their passwords being utmost safe using hashing techniques (using passportJS local authentication and bcrypt for hashing passwords).
 * A Profile page to display the user details and the list of events that the user has registered for. This page also provides an option to log the user out of session (using passportJS authentication). 
