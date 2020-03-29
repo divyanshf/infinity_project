@@ -22,7 +22,7 @@ The screenshots for every page can be seen [here](https://drive.google.com/drive
 
 ## VIDEO
 
-You can find the video [here](https://drive.google.com/file/d/1DJuu-mZyXLByei5fM4yZCtGT6VkTOuDQ/view?usp=sharing)
+You can find the video [here](https://youtu.be/Op41827xvyg).
 
 ## HOSTED WEBSITE LINK
 
