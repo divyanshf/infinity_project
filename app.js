@@ -89,7 +89,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/profile", authCheck, function(req, res) {
-    mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE users.email='" + req.user.email + "'", (err, rows)=>{
+    mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE users.email=?", [req.user.email], (err, rows)=>{
       if(err)
       console.log(err);
       else {
@@ -129,7 +129,7 @@ app.get("/contact", function(req, res) {
 app.get("/events/:eventTitle", authCheck, function(req, res) {
   events.forEach(e=>{
     if(e.title === req.params.eventTitle){
-      mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE events.id='" + e.id + "'", function(err, rows){
+      mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE events.id = ?", [e.id], function(err, rows){
         if(err)
         console.log(err);
         else {
@@ -152,7 +152,7 @@ app.post("/events/:eventTitle", function(req, res) {
   events.forEach(e=>{
     if(e.title===req.params.eventTitle){
 
-      mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE events.id='" + e.id + "'", function(err, rows){
+      mysql.query("SELECT * FROM users INNER JOIN registration ON users.id=registration.user_id INNER JOIN events ON registration.event_id=events.id WHERE events.id = ?", [e.id], function(err, rows){
         if(err)
         console.log(err);
         else {
@@ -167,7 +167,7 @@ app.post("/events/:eventTitle", function(req, res) {
               });
             }
             else {
-              mysql.query("DELETE FROM registration WHERE event_id='" + e.id + "'", function(err){
+              mysql.query("DELETE FROM registration WHERE event_id = ?", [e.id], function(err){
                 if(err)
                 console.log(err);
                 else {

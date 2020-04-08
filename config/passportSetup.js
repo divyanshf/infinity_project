@@ -16,7 +16,7 @@ passport.serializeUser(function(user, done) {
 
 //Deserializing user with passport
 passport.deserializeUser(function(id, done) {
-  mysql.query("SELECT * FROM users WHERE id = " + id, function(err, rows) {
+  mysql.query("SELECT * FROM users WHERE id = ?", [id], function(err, rows) {
     if (!err) {
       if (rows.length != 0)
         done(null, rows[0]);
@@ -32,7 +32,7 @@ passport.use("local-register", new LocalStrategy({
     passReqToCallback: true
   },
   function(req, username, password, done) {
-    mysql.query("SELECT * FROM users WHERE email='" + username + "'", function(err, rows) {
+    mysql.query("SELECT * FROM users WHERE email=?", [username], function(err, rows) {
       if (err) {
         console.log(err);
         done(err);
