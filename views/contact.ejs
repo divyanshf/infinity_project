@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 
-<div class="page-head">
-  <svg id="contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 431.5 71.6">
+    <div class="page-head">
+        <svg id="contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 431.5 71.6">
     <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2px"
       d="M52.1,67.3c-3.2,1.6-9.6,3.2-17.8,3.2C15.3,70.5,1,58.5,1,36.4,1,15.3,15.3,1,36.2,1c8.4,0,13.7,1.8,16,3l-2.1,7.1A31.69,31.69,0,0,0,36.5,8.3c-15.8,0-26.3,10.1-26.3,27.8,0,16.5,9.5,27.1,25.9,27.1a34.82,34.82,0,0,0,14.2-2.8Z" />
     <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2px"
@@ -14,89 +14,99 @@
       d="M369.6,67.3c-3.2,1.6-9.6,3.2-17.8,3.2-19,0-33.3-12-33.3-34.1C318.5,15.3,332.8,1,353.7,1c8.4,0,13.7,1.8,16,3l-2.1,7.1A31.69,31.69,0,0,0,354,8.3c-15.8,0-26.3,10.1-26.3,27.8,0,16.5,9.5,27.1,25.9,27.1a34.82,34.82,0,0,0,14.2-2.8Z" />
     <path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2px" d="M401.1,9.5H380.6V2.1h49.9V9.5H409.9v60h-8.8Z" />
   </svg>
-</div>
-
-<div class="back" style="position:absolute;width:100%;bottom:-20%;">
-  <img src="/SVG/back.svg" alt="">
-</div>
-
-
-<div class="contact-img">
-
-  <div class="apurv" data-aos="fade-right">
-    <div class="user-img">
-      <img src="/SVG/apurv.png" alt="">
-    </div>
-    <div class="name">
-      <h7>Apurv Pandey</h7>
-    </div>
-    <div class="email">
-      <a href="mailto:apurvpandey17@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-
-  <div class="jyoti" data-aos="fade-down">
-    <div class="user-img">
-      <img src="/SVG/jyoti.jpg" alt="">
-    </div>
-    <div class="name">
-      <h7>Jyotirmay Sharma</h7>
-    </div>
-    <div class="email">
-      <a href="mailto:jyotirmaysharma02@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-
-  <div class="divyansh" data-aos="fade-left">
-    <div class="user-img">
-      <img src="/SVG/divyansh.jpeg" alt="">
-    </div>
-    <div class="name">
-      <h7>Divyansh Falodiya</h7>
-    </div>
-    <div class="email">
-      <a href="mailto:divyanshfalodiyaab@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-</div>
-
-<% if(message!=""){ %>
-
-<div class="type-contact">
-  <p><%= message %></p>
-</div>
-
-<% } else { %>
-
-<div class="contact-form" data-aos="fade-up">
-
-  <form class="" action="/contact" method="post" autocomplete="off">
-    <div class="form-user">
-      <div class="name">
-        <label for="name">Name</label>
-        <input type="text" name="name" value="">
-      </div>
-      <div class="email">
-        <label for="email">Email</label>
-        <input type="email" name="email" value="">
-      </div>
     </div>
 
-    <div class="form-message">
-      <textarea placeholder="Give us a message!" name="message" rows="8" cols="80"></textarea>
+    <div class="back" style="position:absolute;width:100%;bottom:-20%;">
+        <img src="/SVG/back.svg" alt="">
     </div>
 
-    <div class="submit-contact">
-      <button type="submit" name="button">Send!</button>
+
+    <div class="contact-img">
+
+        <div class="apurv" data-aos="fade-right">
+            <div class="user-img">
+                <img src="/SVG/apurv.png" alt="">
+            </div>
+            <div class="name">
+                <h7>Apurv Pandey</h7>
+            </div>
+            <div class="email">
+                <a href="mailto:apurvpandey17@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="jyoti" data-aos="fade-down">
+            <div class="user-img">
+                <img src="/SVG/jyoti.jpg" alt="">
+            </div>
+            <div class="name">
+                <h7>Jyotirmay Sharma</h7>
+            </div>
+            <div class="email">
+                <a href="mailto:jyotirmaysharma02@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="divyansh" data-aos="fade-left">
+            <div class="user-img">
+                <img src="/SVG/divyansh.jpeg" alt="">
+            </div>
+            <div class="name">
+                <h7>Divyansh Falodiya</h7>
+            </div>
+            <div class="email">
+                <a href="mailto:divyanshfalodiyaab@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </div>
-  </form>
-
-</div>
 
 
-<% } %>
+    <div class="type-contact">
+        <p>
+            Mailing service is temporarily disabled.
+            <!-- <%= message %> -->
+        </p>
+    </div>
+
+    <!-- <% if(message!=""){ %> -->
+
+    <!-- <div class="type-contact">
+        <p>
+            <%= message %>
+        </p>
+    </div> -->
+
+    <!-- <% } else { %> -->
+
+    <!-- <div class="contact-form" data-aos="fade-up">
+
+                <form class="" action="" method="post" autocomplete="off">
+                    <div class="form-user">
+                        <div class="name">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" value="">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-message">
+                        <textarea placeholder="Give us a message!" name="message" rows="8" cols="80"></textarea>
+                    </div>
+
+                    <div class="submit-contact">
+                        <button type="submit" name="button">Send!</button>
+                    </div>
+                </form>
+
+            </div> -->
+
+
+    <!-- <% } %> -->
 
 
 
-<script src="contact.js" charset="utf-8"></script>
-<%- include("partials/footer") -%>
+    <script src="contact.js" charset="utf-8"></script>
+    <%- include("partials/footer") -%>

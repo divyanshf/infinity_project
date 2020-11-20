@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 
-<div class="page-head">
-  <svg id="register-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.93 70.5">
+    <div class="page-head">
+        <svg id="register-title" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.93 70.5">
         <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M.5,2.5A90.62,90.62,0,0,1,17.2,1.1c9.3,0,15.3,1.7,19.5,5.5A16.79,16.79,0,0,1,42,19.4c0,8.9-5.6,14.8-12.7,17.2v.3c5.2,1.8,8.3,6.6,9.9,13.6C41.4,59.9,43,66.4,44.4,69h-9c-1.1-1.9-2.6-7.7-4.5-16.1-2-9.3-5.6-12.8-13.5-13.1H9.2V69H.5ZM9.2,33.2h8.9c9.3,0,15.2-5.1,15.2-12.8,0-8.7-6.3-12.5-15.5-12.6a35.79,35.79,0,0,0-8.6.8Z"/>
         <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M94.2,37.4H68V61.7H97.2V69H59.3V1.6H95.7V8.9H68V30.2H94.2Z"/>
         <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M164.8,66a62.79,62.79,0,0,1-20.7,3.7c-10.2,0-18.6-2.6-25.2-8.9-5.8-5.6-9.4-14.6-9.4-25.1C109.6,15.6,123.4.9,146,.9c7.8,0,13.9,1.7,16.8,3.1l-2.1,7.1a34.94,34.94,0,0,0-14.9-2.9c-16.4,0-27.1,10.2-27.1,27.1,0,17.1,10.3,27.2,26,27.2,5.7,0,9.6-.8,11.6-1.8V40.6H142.6v-7h22.2Z"/>
@@ -11,61 +11,64 @@
         <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M355.9,37.4H329.7V61.7h29.2V69H321V1.6h36.4V8.9H329.7V30.2h26.2Z"/>
         <path fill= "transparent" stroke= "#000" stroke-miterlimit= "10" stroke-width= "2px" d="M375.2,2.5a90.62,90.62,0,0,1,16.7-1.4c9.3,0,15.3,1.7,19.5,5.5a16.79,16.79,0,0,1,5.3,12.8c0,8.9-5.6,14.8-12.7,17.2v.3c5.2,1.8,8.3,6.6,9.9,13.6,2.2,9.4,3.8,15.9,5.2,18.5h-9c-1.1-1.9-2.6-7.7-4.5-16.1-2-9.3-5.6-12.8-13.5-13.1h-8.2V69h-8.7Zm8.7,30.7h8.9c9.3,0,15.2-5.1,15.2-12.8,0-8.7-6.3-12.5-15.5-12.6a35.79,35.79,0,0,0-8.6.8Z"/>
   </svg>
-</div>
-
-<div class="back" style="position:absolute;width:100%;bottom:-20%;">
-  <img src="/SVG/back.svg" alt="">
-</div>
-
-<div class="form-container" data-aos="fade-up">
-  <div class="primary-log-in">
-    <h2 id="log-in-head">Log-in</h2>
-    <form class="" onsubmit="return validatePrimaryLogin()" action="/login" method="post" autocomplete="off">
-      <div class="username">
-        <input type="email" name="email" required>
-        <label for="name" class="label"><span class="label-name">Email Address</span></label>
-      </div>
-      <div class="password">
-        <input type="password" name="password" required>
-        <label for="password" class="label"><span class="label-name">Password</span></label>
-      </div>
-      <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a>
-      <button class="primary-button" type="submit" name="login">Login</button>
-
-      <h3>Not yet registered!</h3>
-      <button class="secondary-button" type="button" name="button">Register</button>
-    </form>
-  </div>
-
-    <div class="primary-register">
-      <h2 id="log-in-head">Register</h2>
-      <form class="" onsubmit="return validatePrimaryRegsiter()" action="/register" method="post" autocomplete="off">
-        <div class="username">
-          <input type="text" name="name" required>
-          <label for="name" class="label"><span class="label-name">Name</span></label>
-        </div>
-        <div class="email">
-          <input type="email" name="email" required>
-          <label for="name" class="label"><span class="label-name">E-mail</span></label>
-        </div>
-        <div class="password">
-          <input type="password" name="password" required>
-          <label for="password" class="label"><span class="label-name">Password</span></label>
-        </div>
-        <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a>
-        <button class="primary-button" type="submit" name="register">Register</button>
-
-        <h3>Already registered!</h3>
-        <button class="secondary-button" type="button" name="button">Log-in</button>
-      </form>
     </div>
 
-</div>
+    <div class="back" style="position:absolute;width:100%;bottom:-20%;">
+        <img src="/SVG/back.svg" alt="">
+    </div>
 
-<div class="type-register">
-  <p><%= message %></p>
-</div>
+    <div class="form-container" data-aos="fade-up">
+        <div class="primary-log-in">
+            <h2 id="log-in-head">Log-in</h2>
+            <form class="" onsubmit="return validatePrimaryLogin()" action="/login" method="post" autocomplete="off">
+                <div class="username">
+                    <input type="email" name="email" required>
+                    <label for="name" class="label"><span class="label-name">Email Address</span></label>
+
+                </div>
+                <div class="password">
+                    <input type="password" name="password" required>
+                    <label for="password" class="label"><span class="label-name">Password</span></label>
+                </div>
+                <!-- <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a> -->
+                <button class="primary-button" type="submit" name="login">Login</button>
+
+                <h3>Not yet registered!</h3>
+                <button class="secondary-button" type="button" name="button">Register</button>
+            </form>
+        </div>
+
+        <div class="primary-register">
+            <h2 id="log-in-head">Register</h2>
+            <form class="" onsubmit="return validatePrimaryRegsiter()" action="/register" method="post" autocomplete="off">
+                <div class="username">
+                    <input type="text" name="name" required>
+                    <label for="name" class="label"><span class="label-name">Name</span></label>
+                </div>
+                <div class="email">
+                    <input type="email" name="email" required>
+                    <label for="name" class="label"><span class="label-name">E-mail</span></label>
+                </div>
+                <div class="password">
+                    <input type="password" name="password" required>
+                    <label for="password" class="label"><span class="label-name">Password</span></label>
+                </div>
+                <!-- <a href="/auth/google"><button class="explore google-sign" type="button" name="button"><i class="fab fa-google"></i></button></a> -->
+                <button class="primary-button" type="submit" name="register">Register</button>
+
+                <h3>Already registered!</h3>
+                <button class="secondary-button" type="button" name="button">Log-in</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="type-register">
+        <p>
+            <%= message %>
+        </p>
+    </div>
 
 
-<script src="register.js" charset="utf-8"></script>
-<%- include("partials/footer") -%>
+    <script src="register.js" charset="utf-8"></script>
+    <%- include("partials/footer") -%>

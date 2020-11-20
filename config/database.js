@@ -1,21 +1,34 @@
-// require("dotenv").config();
-const mysql = require("mysql");
-// const keys = require("./keys");
+require("dotenv").config();
 
+const mongoose = require("mongoose");
+let url = process.env.MONGO_URL;
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
-//Creating a connection with the sql database we have
-const con = mysql.createConnection({
-  host:process.env.SQL_HOST,
-  user:process.env.SQL_USER,
-  password:process.env.SQL_PASS,
-  database:process.env.SQL_DB
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+    console.log("Succesfully connected");
 });
 
-
-//connecting to the speccified database
-con.connect(function(err){
-  if(err) console.log(err);
-  console.log("DB Connected");
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String,
+});
+const eventSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    image: String,
+});
+const registerSchema = new mongoose.Schema({
+    user_id: String,
+    event_id: String,
+    event_title: String
 });
 
-module.exports = con;
+const User = mongoose.model("User", userSchema);
+const Event = mongoose.model("Event", eventSchema);
+const Register = mongoose.model("Register", registerSchema);
+
+module.exports = { User, Event, Register };
