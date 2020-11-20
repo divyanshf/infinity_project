@@ -1,41 +1,37 @@
 {
-  "name": "infinity",
-  "version": "1.0.0",
-  "description": "A website for techfest",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "DivyanshFalodiya",
-  "license": "ISC",
-  "engines": {
-    "node": "12.16.1"
-  },
-  "dependencies": {
-    "@mysql/xdevapi": "^8.0.19",
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.19.0",
-    "connect-flash": "^0.1.1",
-    "cookie-session": "^1.4.0",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
-    "express-flash": "0.0.2",
-    "express-session": "^1.17.0",
-    "formidable": "^1.2.2",
-<<<<<<< HEAD
-    "lodash": "^4.17.15",
-    "mongodb": "^3.6.3",
-    "mongoose": "^5.10.15",
-=======
-    "lodash": "^4.17.19",
->>>>>>> 66048af926b6021cefbed778360dc6c8f8385fec
-    "mysql": "^2.18.1",
-    "nodemailer": "^6.4.6",
-    "nodemailer-mailgun-transport": "^2.0.0",
-    "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0",
-    "request": "^2.88.2"
-  }
+    "name": "infinity",
+    "version": "1.0.0",
+    "description": "A website for techfest",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "DivyanshFalodiya",
+    "license": "ISC",
+    "engines": {
+        "node": "12.16.1"
+    },
+    "dependencies": {
+        "@mysql/xdevapi": "^8.0.19",
+        "bcrypt": "^5.0.0",
+        "body-parser": "^1.19.0",
+        "connect-flash": "^0.1.1",
+        "cookie-session": "^1.4.0",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "express-flash": "0.0.2",
+        "express-session": "^1.17.0",
+        "formidable": "^1.2.2",
+        "mongodb": "^3.6.3",
+        "mongoose": "^5.10.15",
+        "lodash": "^4.17.19",
+        "mysql": "^2.18.1",
+        "nodemailer": "^6.4.6",
+        "nodemailer-mailgun-transport": "^2.0.0",
+        "passport": "^0.4.1",
+        "passport-google-oauth20": "^2.0.0",
+        "passport-local": "^1.0.0",
+        "request": "^2.88.2"
+    }
 }
