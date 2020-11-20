@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@mysql/xdevapi": "^8.0.19",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-session": "^1.4.0",
@@ -23,9 +23,13 @@
     "express-flash": "0.0.2",
     "express-session": "^1.17.0",
     "formidable": "^1.2.2",
+<<<<<<< HEAD
     "lodash": "^4.17.15",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.15",
+=======
+    "lodash": "^4.17.19",
+>>>>>>> 66048af926b6021cefbed778360dc6c8f8385fec
     "mysql": "^2.18.1",
     "nodemailer": "^6.4.6",
     "nodemailer-mailgun-transport": "^2.0.0",
